@@ -3,6 +3,16 @@ body {
     font-size: 14px;
 }
 
+.simulate {
+    display: inline-block;    
+    font-weight: bold;
+    user-select: none;
+}
+
+.simulate * {
+    cursor: pointer;    
+}
+
 button {
     cursor: pointer;
     display:inline-block;

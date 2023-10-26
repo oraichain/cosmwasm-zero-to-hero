@@ -3,8 +3,8 @@
   "targets": {
     "oraichain-dapp": {
       "hosting": {
-        "cw-notebook": [
-          "cw-notebook"
+        "hackathon-cw": [
+          "hackathon-cw"
         ]
       }
     }

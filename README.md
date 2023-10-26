@@ -21,7 +21,7 @@ Build smart contract & gen code
 
 ```bash
 cwtools build code/cw-starter
-cwtools genjs code/cw-starter -o src/contracts
+cwtools gents code/cw-starter -o src/contracts
 ```
 
 ## Step by step how to play with cosmwasm simulation tools

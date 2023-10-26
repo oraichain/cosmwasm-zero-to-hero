@@ -6,16 +6,72 @@ import { sanitize } from 'dompurify';
 import { basicSetup, EditorView } from 'codemirror';
 import { javascript } from '@codemirror/lang-javascript';
 import json from './json';
-
 import 'highlight.js/styles/default.css';
 import './notebook.css';
+
 const logs = [];
 
 const sandboxFrame = document.getElementById('sandboxFrame').contentWindow;
+sandboxFrame.simulate = true;
 
 console.log = sandboxFrame.console.log = function (...value) {
   logs.push(...value);
 };
+
+if (window.keplr) {
+  sandboxFrame.window.keplr = window.keplr;
+  const OraiToken = {
+    coinDenom: 'ORAI',
+    coinMinimalDenom: 'orai',
+    coinDecimals: 6,
+    coinGeckoId: 'oraichain-token',
+    gasPriceStep: {
+      low: 0.003,
+      average: 0.005,
+      high: 0.007
+    }
+  };
+  const defaultBech32Config = (mainPrefix, validatorPrefix = 'val', consensusPrefix = 'cons', publicPrefix = 'pub', operatorPrefix = 'oper') => {
+    return {
+      bech32PrefixAccAddr: mainPrefix,
+      bech32PrefixAccPub: mainPrefix + publicPrefix,
+      bech32PrefixValAddr: mainPrefix + validatorPrefix + operatorPrefix,
+      bech32PrefixValPub: mainPrefix + validatorPrefix + operatorPrefix + publicPrefix,
+      bech32PrefixConsAddr: mainPrefix + validatorPrefix + consensusPrefix,
+      bech32PrefixConsPub: mainPrefix + validatorPrefix + consensusPrefix + publicPrefix
+    };
+  };
+  (async () => {
+    await window.keplr.experimentalSuggestChain({
+      rpc: 'https://rpc.orai.io',
+      rest: 'https://lcd.orai.io',
+      chainId: 'Oraichain',
+      chainName: 'Oraichain',
+      stakeCurrency: OraiToken,
+      bip44: {
+        coinType: 118
+      },
+      bech32Config: defaultBech32Config('orai'),
+      feeCurrencies: [OraiToken],
+      features: ['ibc-transfer', 'cosmwasm', 'wasmd_0.24+'],
+      currencies: [OraiToken]
+    });
+    await window.keplr.experimentalSuggestChain({
+      rpc: 'https://testnet.rpc.orai.io',
+      rest: 'https://testnet.lcd.orai.io',
+      chainId: 'Oraichain-testnet',
+      chainName: 'Oraichain Testnet',
+      stakeCurrency: OraiToken,
+      bip44: {
+        coinType: 118
+      },
+      bech32Config: defaultBech32Config('orai'),
+      feeCurrencies: [OraiToken],
+      features: ['ibc-transfer', 'cosmwasm', 'wasmd_0.24+'],
+      currencies: [OraiToken]
+    });
+  })();
+}
 
 // depedencies
 sandboxFrame.depedencies = {
