@@ -1,0 +1,78 @@
+body {
+    font-family: Helvetica Neue, Helvetica, sans-serif;
+    font-size: 14px;
+}
+
+button {
+    cursor: pointer;
+    display:inline-block;
+    padding:0.3em 1.2em;
+    margin:0 0.1em 0.1em 0;    
+    border-radius:4px;
+    box-sizing: border-box;
+    text-decoration:none;
+    color: #222;
+    font-family:'Roboto',sans-serif;
+    font-weight:300;    
+    text-shadow: 0 0.04em 0.04em rgba(0,0,0,0.35);
+    text-align:center;
+    transition: all 0.2s;
+}
+
+button.selected {
+    background-color: #7664E4;    
+    color: #F6F7FB;
+}
+
+button.runall { 
+    position: fixed;
+    right: 10px;
+    top: 10px;
+    z-index: 9999;
+}
+
+button.loading {
+    border: 2px solid #f3f3f3;    
+    animation: spin 1s linear infinite;
+    border-top: 2px solid #555;    
+}
+
+button:hover{
+    opacity: 0.7;
+}
+
+#root {
+    padding-left: 40px;        
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+#header {
+    line-height: 2;
+    margin-bottom: 0.25em;
+    font-weight: bold;
+}
+
+#controls {
+    border: 1px dotted #CCC;
+    padding: 0.75em;
+    margin-bottom: 0.5em;
+    background-color: #EEF;
+}
+
+#footer {
+    border: 1px dotted #CCC;
+    background-color: #EEF;
+    font-size: 0.8em;
+    padding: 0.5em;
+    text-align: center;
+}
+
+#footer a, #footer a:visited {
+    color: #0077EE;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
