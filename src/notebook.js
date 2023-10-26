@@ -19,7 +19,11 @@ console.log = sandboxFrame.console.log = function (...value) {
 };
 
 if (window.keplr) {
-  sandboxFrame.window.keplr = window.keplr;
+  Object.assign(sandboxFrame.window, {
+    get keplr() {
+      return window.keplr;
+    }
+  });
   const OraiToken = {
     coinDenom: 'ORAI',
     coinMinimalDenom: 'orai',
