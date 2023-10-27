@@ -42,10 +42,8 @@ yarn add @oraichain/cw-simulate -D
 
 ### NoteBooks
 
-1. [Basic Note Book](./public/nb/basic.ipynb)
-1. [Dao Note Book](./public/nb/dao.ipynb)
-1. [Orderbook Note Book](./public/nb/orderbook.ipynb)
-1. [ICS20 Note Book](./public/nb/ibc-ics20.ipynb)
+1. [Cosmwasm Starter](./public/nb/cw-starter.ipynb)
+1. [Cosmwasm CW20 Contract](./public/nb/cw-cw20.ipynb)
 
 ### Compare to cosmwasm-multitest
 
