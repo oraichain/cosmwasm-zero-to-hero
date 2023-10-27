@@ -11,6 +11,10 @@
     top: 10px;
 }
 
+.nb-list button {
+    text-align: left;
+}
+
 .nb-stdout,
 .nb-stderr {
     white-space: pre-wrap;

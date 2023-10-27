@@ -4,7 +4,10 @@ import nb from './notebook';
 import './index.css';
 import { useEffect, useRef, useState } from 'react';
 
-const options = [{ value: 'cw-starter', label: 'Cosmwasm Starter' }];
+const options = [
+  { value: 'cw-starter', label: 'Cosmwasm Starter' },
+  { value: 'cw-cw20', label: 'Cosmwasm CW20 Contract' }
+];
 
 const url = new URL(location.href);
 
