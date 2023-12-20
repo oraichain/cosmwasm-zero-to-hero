@@ -13,9 +13,10 @@
     "@oraichain/cosmwasm-vm-zk": "^0.1.3",
     "@oraichain/cw-simulate": "^2.8.75",
     "@oraichain/dao-contracts-sdk": "^1.0.4",
+    "@oraichain/notebookjs": "^0.1.5",
     "@oraichain/oraidex-contracts-build": "^1.0.14",
     "@oraichain/oraidex-contracts-sdk": "^1.0.22",
-    "@oraichain/notebookjs": "^0.1.5",
+    "@oraichain/oraimargin-contracts-sdk": "^1.0.33",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },

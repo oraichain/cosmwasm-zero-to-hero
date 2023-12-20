@@ -6,9 +6,11 @@ import { useEffect, useRef, useState } from 'react';
 
 const options = [
   { value: 'cw-starter', label: 'Cosmwasm Starter' },
-  { value: 'cw-cw20', label: 'Cosmwasm CW20 Contract' }
+  { value: 'cw-cw20', label: 'Cosmwasm CW20 Contract' },
+  { value: 'perpetual', label: 'Cosmwasm Perpetual Contract' }
 ];
-
+// polyfill Buffer
+window.Buffer = require('buffer').Buffer;
 nb.sandboxFrame.simulate = true;
 window.onload = async () => {
   if (window.keplr) {
@@ -70,6 +72,7 @@ window.onload = async () => {
 nb.updateDepedencies({
   'ts-results': require('ts-results'),
   bech32: require('bech32'),
+  '@oraichain/oraimargin-contracts-sdk': require('@oraichain/oraimargin-contracts-sdk'),
   '@cosmjs/stargate': require('@cosmjs/stargate'),
   '@cosmjs/cosmwasm-stargate': require('@cosmjs/cosmwasm-stargate'),
   '@oraichain/cw-simulate': require('@oraichain/cw-simulate'),

@@ -1971,6 +1971,11 @@
   resolved "https://registry.yarnpkg.com/@oraichain/oraidex-contracts-sdk/-/oraidex-contracts-sdk-1.0.22.tgz#b9cf9bc0b367d4cc0639e2a4e231f1ef033c4b77"
   integrity sha512-U6QoDDDKAutJ8W351hNpnPCEH5D0haXPPilxNkEE8+z5tYVbiGM4G4zjCxJgdtPRFZP0lZmvVI+T1gmd445uoQ==
 
+"@oraichain/oraimargin-contracts-sdk@^1.0.33":
+  version "1.0.33"
+  resolved "https://registry.yarnpkg.com/@oraichain/oraimargin-contracts-sdk/-/oraimargin-contracts-sdk-1.0.33.tgz#526edc57f7dc5817f2a81218ce0dada22bf70965"
+  integrity sha512-77Cd0pq3gKgB44CbrlbUYbvUZ9ImYKaJI0qh7w4LECF0y2YzsLYtgCKt3AZZruElBbRbq3Z8yRYJ1Jg1l7dzIQ==
+
 "@oraichain/wasm-json-toolkit@^1.0.24":
   version "1.0.24"
   resolved "https://registry.yarnpkg.com/@oraichain/wasm-json-toolkit/-/wasm-json-toolkit-1.0.24.tgz#e9a431560e8e946fbb7ec257e5f13d9320ffd23a"
