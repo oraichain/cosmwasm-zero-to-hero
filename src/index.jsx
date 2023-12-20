@@ -1,6 +1,6 @@
 import { createRoot } from 'react-dom/client';
 
-import nb from './notebook';
+import nb from '@oraichain/notebookjs';
 import './index.css';
 import { useEffect, useRef, useState } from 'react';
 
@@ -8,6 +8,77 @@ const options = [
   { value: 'cw-starter', label: 'Cosmwasm Starter' },
   { value: 'cw-cw20', label: 'Cosmwasm CW20 Contract' }
 ];
+
+nb.sandboxFrame.simulate = true;
+window.onload = async () => {
+  if (window.keplr) {
+    nb.sandboxFrame.window.keplr = window.keplr;
+    const OraiToken = {
+      coinDenom: 'ORAI',
+      coinMinimalDenom: 'orai',
+      coinDecimals: 6,
+      coinGeckoId: 'oraichain-token',
+      gasPriceStep: {
+        low: 0.003,
+        average: 0.005,
+        high: 0.007
+      }
+    };
+    const defaultBech32Config = (mainPrefix, validatorPrefix = 'val', consensusPrefix = 'cons', publicPrefix = 'pub', operatorPrefix = 'oper') => {
+      return {
+        bech32PrefixAccAddr: mainPrefix,
+        bech32PrefixAccPub: mainPrefix + publicPrefix,
+        bech32PrefixValAddr: mainPrefix + validatorPrefix + operatorPrefix,
+        bech32PrefixValPub: mainPrefix + validatorPrefix + operatorPrefix + publicPrefix,
+        bech32PrefixConsAddr: mainPrefix + validatorPrefix + consensusPrefix,
+        bech32PrefixConsPub: mainPrefix + validatorPrefix + consensusPrefix + publicPrefix
+      };
+    };
+
+    await window.keplr.experimentalSuggestChain({
+      rpc: 'https://rpc.orai.io',
+      rest: 'https://lcd.orai.io',
+      chainId: 'Oraichain',
+      chainName: 'Oraichain',
+      stakeCurrency: OraiToken,
+      bip44: {
+        coinType: 118
+      },
+      bech32Config: defaultBech32Config('orai'),
+      feeCurrencies: [OraiToken],
+      features: ['ibc-transfer', 'cosmwasm', 'wasmd_0.24+'],
+      currencies: [OraiToken]
+    });
+    await window.keplr.experimentalSuggestChain({
+      rpc: 'https://testnet.rpc.orai.io',
+      rest: 'https://testnet.lcd.orai.io',
+      chainId: 'Oraichain-testnet',
+      chainName: 'Oraichain Testnet',
+      stakeCurrency: OraiToken,
+      bip44: {
+        coinType: 118
+      },
+      bech32Config: defaultBech32Config('orai'),
+      feeCurrencies: [OraiToken],
+      features: ['ibc-transfer', 'cosmwasm', 'wasmd_0.24+'],
+      currencies: [OraiToken]
+    });
+  }
+};
+
+// depedencies
+nb.updateDepedencies({
+  'ts-results': require('ts-results'),
+  bech32: require('bech32'),
+  '@cosmjs/stargate': require('@cosmjs/stargate'),
+  '@cosmjs/cosmwasm-stargate': require('@cosmjs/cosmwasm-stargate'),
+  '@oraichain/cw-simulate': require('@oraichain/cw-simulate'),
+  '@oraichain/common-contracts-sdk': require('@oraichain/common-contracts-sdk'),
+  // '@oraichain/cosmwasm-vm-zk-web': require('@oraichain/cosmwasm-vm-zk-web'),
+  // '@oraichain/oraidex-contracts-sdk': require('@oraichain/oraidex-contracts-sdk'),
+  // '@oraichain/dao-contracts-sdk': require('@oraichain/dao-contracts-sdk'),
+  './contracts': require('./contracts')
+});
 
 const url = new URL(location.href);
 
