@@ -7,7 +7,8 @@ import { useEffect, useRef, useState } from 'react';
 const options = [
   { value: 'cw-starter', label: 'Cosmwasm Starter' },
   { value: 'cw-cw20', label: 'Cosmwasm CW20 Contract' },
-  { value: 'perpetual', label: 'Cosmwasm Perpetual Contract' }
+  { value: 'perpetual', label: 'Cosmwasm Perpetual Contract' },
+  { value: 'transfer-perpetual', label: 'Cosmwasm Perpetual Transfer List' }
 ];
 // polyfill Buffer
 window.Buffer = require('buffer').Buffer;
@@ -77,9 +78,8 @@ nb.updateDepedencies({
   '@cosmjs/cosmwasm-stargate': require('@cosmjs/cosmwasm-stargate'),
   '@oraichain/cw-simulate': require('@oraichain/cw-simulate'),
   '@oraichain/common-contracts-sdk': require('@oraichain/common-contracts-sdk'),
-  // '@oraichain/cosmwasm-vm-zk-web': require('@oraichain/cosmwasm-vm-zk-web'),
-  // '@oraichain/oraidex-contracts-sdk': require('@oraichain/oraidex-contracts-sdk'),
-  // '@oraichain/dao-contracts-sdk': require('@oraichain/dao-contracts-sdk'),
+  '@cosmjs/tendermint-rpc': require('@cosmjs/tendermint-rpc'),
+  '@cosmjs/tendermint-rpc/build/tendermint37/requests.js': require('@cosmjs/tendermint-rpc/build/tendermint37/requests.js'),
   './contracts': require('./contracts')
 });
 
