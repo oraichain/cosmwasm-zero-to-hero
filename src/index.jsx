@@ -5,6 +5,7 @@ import './index.css';
 import { useEffect, useRef, useState } from 'react';
 
 const options = [
+  { value: 'custom', label: 'Custom Scripts' },
   { value: 'cw-starter', label: 'Cosmwasm Starter' },
   { value: 'cw-cw20', label: 'Cosmwasm CW20 Contract' },
   { value: 'perpetual', label: 'Cosmwasm Perpetual Contract' },
