@@ -75,6 +75,8 @@ nb.updateDepedencies({
   'ts-results': require('ts-results'),
   bech32: require('bech32'),
   '@oraichain/oraimargin-contracts-sdk': require('@oraichain/oraimargin-contracts-sdk'),
+  '@oraichain/oraidex-common': require('@oraichain/oraidex-common'),
+  'cosmjs-types': require('cosmjs-types'),
   '@cosmjs/stargate': require('@cosmjs/stargate'),
   '@cosmjs/cosmwasm-stargate': require('@cosmjs/cosmwasm-stargate'),
   '@oraichain/cw-simulate': require('@oraichain/cw-simulate'),
