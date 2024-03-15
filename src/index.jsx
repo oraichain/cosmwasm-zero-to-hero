@@ -77,6 +77,8 @@ nb.updateDepedencies({
   '@oraichain/oraimargin-contracts-sdk': require('@oraichain/oraimargin-contracts-sdk'),
   '@oraichain/oraidex-common': require('@oraichain/oraidex-common'),
   'cosmjs-types': require('cosmjs-types'),
+  'cosmjs-types/cosmos/bank/v1beta1/authz': require('cosmjs-types/cosmos/bank/v1beta1/authz'),
+  'cosmjs-types/google/protobuf/timestamp': require('cosmjs-types/google/protobuf/timestamp'),
   '@cosmjs/stargate': require('@cosmjs/stargate'),
   '@cosmjs/cosmwasm-stargate': require('@cosmjs/cosmwasm-stargate'),
   '@oraichain/cw-simulate': require('@oraichain/cw-simulate'),
