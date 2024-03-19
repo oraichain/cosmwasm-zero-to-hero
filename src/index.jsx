@@ -11,8 +11,7 @@ const options = [
   { value: 'perpetual', label: 'Cosmwasm Perpetual Contract' },
   { value: 'transfer-perpetual', label: 'Cosmwasm Perpetual Transfer List' }
 ];
-// polyfill Buffer
-window.Buffer = require('buffer').Buffer;
+
 nb.sandboxFrame.simulate = true;
 window.onload = async () => {
   if (window.keplr) {
