@@ -81,7 +81,8 @@ nb.updateDepedencies({
   '@oraichain/cw-simulate': require('@oraichain/cw-simulate'),
   '@oraichain/common-contracts-sdk': require('@oraichain/common-contracts-sdk'),
   '@cosmjs/tendermint-rpc': require('@cosmjs/tendermint-rpc'),
-  './contracts': require('./contracts')
+  './contracts': require('./contracts'),
+  './mmbot': require('./mmbot')
 });
 
 const url = new URL(location.href);
