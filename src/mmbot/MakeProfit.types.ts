@@ -17,6 +17,7 @@ export interface Config {
   executors: Addr[];
   factory_v1_contract: Addr;
   factory_v2_contract: Addr;
+  oracle_contract: Addr;
   orderbook_contract: Addr;
   owner: Addr;
   router_contract: Addr;
@@ -26,6 +27,9 @@ export interface MakeOrdersConfigInstantiate {
   base_threshold: Uint128;
   buy_depth: Uint128;
   depth_percentage: string;
+  key_oracle: string;
+  min_base_volume_order: Uint128;
+  min_quote_volume_order: Uint128;
   oracle_diff_percentage: string;
   quote_asset: AssetInfo;
   quote_threshold: Uint128;
@@ -44,6 +48,7 @@ export type ExecuteMsg = {
   };
 } | {
   update_config: {
+    cancel_all_orders?: boolean | null;
     config: Config;
   };
 } | {
@@ -53,9 +58,7 @@ export type ExecuteMsg = {
     index_price: Decimal;
   };
 } | {
-  make_orders: {
-    oracle_price: Decimal;
-  };
+  make_orders: {};
 } | {
   generate_orders: {
     index_price: Decimal;
@@ -74,6 +77,9 @@ export interface MakeOrdersConfig {
   expected_sell_depth: Uint128;
   first_time_create_orders_mode: IndexPriceType;
   is_first_time_create_order: boolean;
+  key_oracle: string;
+  min_base_volume_order: Uint128;
+  min_quote_volume_order: Uint128;
   oracle_diff_percentage: Decimal;
   pause: boolean;
   quote_asset: AssetInfo;
@@ -89,7 +95,7 @@ export type QueryMsg = {
 } | {
   get_balances: {};
 };
-export type MigrateMsg = string;
+export interface MigrateMsg {}
 export interface GetBalancesResponse {
   base_asset: Asset;
   quote_asset: Asset;

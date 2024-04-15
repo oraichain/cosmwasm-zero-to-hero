@@ -56,8 +56,10 @@ export interface MakeProfitInterface extends MakeProfitReadOnlyInterface {
     makeOrdersConfig: MakeOrdersConfig;
   }, _fee?: number | StdFee | "auto", _memo?: string, _funds?: Coin[]) => Promise<ExecuteResult>;
   updateConfig: ({
+    cancelAllOrders,
     config
   }: {
+    cancelAllOrders?: boolean;
     config: Config;
   }, _fee?: number | StdFee | "auto", _memo?: string, _funds?: Coin[]) => Promise<ExecuteResult>;
   cancelAllOrders: (_fee?: number | StdFee | "auto", _memo?: string, _funds?: Coin[]) => Promise<ExecuteResult>;
@@ -66,11 +68,7 @@ export interface MakeProfitInterface extends MakeProfitReadOnlyInterface {
   }: {
     indexPrice: Decimal;
   }, _fee?: number | StdFee | "auto", _memo?: string, _funds?: Coin[]) => Promise<ExecuteResult>;
-  makeOrders: ({
-    oraclePrice
-  }: {
-    oraclePrice: Decimal;
-  }, _fee?: number | StdFee | "auto", _memo?: string, _funds?: Coin[]) => Promise<ExecuteResult>;
+  makeOrders: (_fee?: number | StdFee | "auto", _memo?: string, _funds?: Coin[]) => Promise<ExecuteResult>;
   generateOrders: ({
     indexPrice,
     oraclePrice
@@ -123,12 +121,15 @@ export class MakeProfitClient extends MakeProfitQueryClient implements MakeProfi
     }, _fee, _memo, _funds);
   };
   updateConfig = async ({
+    cancelAllOrders,
     config
   }: {
+    cancelAllOrders?: boolean;
     config: Config;
   }, _fee: number | StdFee | "auto" = "auto", _memo?: string, _funds?: Coin[]): Promise<ExecuteResult> => {
     return await this.client.execute(this.sender, this.contractAddress, {
       update_config: {
+        cancel_all_orders: cancelAllOrders,
         config
       }
     }, _fee, _memo, _funds);
@@ -149,15 +150,9 @@ export class MakeProfitClient extends MakeProfitQueryClient implements MakeProfi
       }
     }, _fee, _memo, _funds);
   };
-  makeOrders = async ({
-    oraclePrice
-  }: {
-    oraclePrice: Decimal;
-  }, _fee: number | StdFee | "auto" = "auto", _memo?: string, _funds?: Coin[]): Promise<ExecuteResult> => {
+  makeOrders = async (_fee: number | StdFee | "auto" = "auto", _memo?: string, _funds?: Coin[]): Promise<ExecuteResult> => {
     return await this.client.execute(this.sender, this.contractAddress, {
-      make_orders: {
-        oracle_price: oraclePrice
-      }
+      make_orders: {}
     }, _fee, _memo, _funds);
   };
   generateOrders = async ({

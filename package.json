@@ -17,7 +17,7 @@
     "@oraichain/dao-contracts-sdk": "^1.0.4",
     "@oraichain/notebookjs": "^0.1.15",
     "@oraichain/oraidex-contracts-build": "^1.0.14",
-    "@oraichain/oraidex-contracts-sdk": "^1.0.22",
+    "@oraichain/oraidex-contracts-sdk": "^1.0.28",
     "@oraichain/oraimargin-contracts-sdk": "^1.0.33",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
