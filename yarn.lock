@@ -2686,15 +2686,29 @@
   dependencies:
     eslint-scope "5.1.1"
 
+"@noble/curves@^1.0.0":
+  version "1.5.0"
+  resolved "https://registry.yarnpkg.com/@noble/curves/-/curves-1.5.0.tgz#7a9b9b507065d516e6dce275a1e31db8d2a100dd"
+  integrity sha512-J5EKamIHnKPyClwVrzmaf5wSdQXgdHcPZIZLu3bwnbeCx8/7NPK5q2ZBWF+5FvYGByjiQQsJYX6jfgB2wDPn3A==
+  dependencies:
+    "@noble/hashes" "1.4.0"
+
+"@noble/curves@~1.4.0":
+  version "1.4.2"
+  resolved "https://registry.yarnpkg.com/@noble/curves/-/curves-1.4.2.tgz#40309198c76ed71bc6dbf7ba24e81ceb4d0d1fe9"
+  integrity sha512-TavHr8qycMChk8UwMld0ZDRvatedkzWfH8IiaeGCfymOP5i0hSCozz9vHOL0nkwk7HRMlFnAiKpS2jrUmSybcw==
+  dependencies:
+    "@noble/hashes" "1.4.0"
+
+"@noble/hashes@1.4.0", "@noble/hashes@^1.2.0", "@noble/hashes@~1.4.0":
+  version "1.4.0"
+  resolved "https://registry.yarnpkg.com/@noble/hashes/-/hashes-1.4.0.tgz#45814aa329f30e4fe0ba49426f49dfccdd066426"
+  integrity sha512-V1JJ1WTRUqHHrOSh597hURcMqVKVGL/ea3kv0gSnEdsEZ0/+VyPghM1lMNGc00z7CIQorSvbKpuJkxvuHbvdbg==
+
 "@noble/hashes@^1", "@noble/hashes@^1.0.0":
   version "1.3.0"
   resolved "https://registry.yarnpkg.com/@noble/hashes/-/hashes-1.3.0.tgz#085fd70f6d7d9d109671090ccae1d3bec62554a1"
   integrity sha512-ilHEACi9DwqJB0pw7kv+Apvh50jiiSyR/cQ3y4W7lOR5mhvn/50FLUfsnfJz0BDZtl/RR16kXvptiv6q1msYZg==
-
-"@noble/hashes@^1.2.0":
-  version "1.4.0"
-  resolved "https://registry.yarnpkg.com/@noble/hashes/-/hashes-1.4.0.tgz#45814aa329f30e4fe0ba49426f49dfccdd066426"
-  integrity sha512-V1JJ1WTRUqHHrOSh597hURcMqVKVGL/ea3kv0gSnEdsEZ0/+VyPghM1lMNGc00z7CIQorSvbKpuJkxvuHbvdbg==
 
 "@nodelib/fs.scandir@2.1.5":
   version "2.1.5"
@@ -2934,6 +2948,28 @@
   version "1.4.0"
   resolved "https://registry.yarnpkg.com/@rushstack/eslint-patch/-/eslint-patch-1.4.0.tgz#77e948b9760bd22736a5d26e335a690f76fda37b"
   integrity sha512-cEjvTPU32OM9lUFegJagO0mRnIn+rbqrG89vV8/xLnLFX0DoR0r1oy5IlTga71Q7uT3Qus7qm7wgeiMT/+Irlg==
+
+"@scure/base@^1.1.3", "@scure/base@~1.1.6":
+  version "1.1.7"
+  resolved "https://registry.yarnpkg.com/@scure/base/-/base-1.1.7.tgz#fe973311a5c6267846aa131bc72e96c5d40d2b30"
+  integrity sha512-PPNYBslrLNNUQ/Yad37MHYsNQtK67EhWb6WtSvNLLPo7SdVZgkUjD6Dg+5On7zNwmskf8OX7I7Nx5oN+MIWE0g==
+
+"@scure/bip32@^1.3.1":
+  version "1.4.0"
+  resolved "https://registry.yarnpkg.com/@scure/bip32/-/bip32-1.4.0.tgz#4e1f1e196abedcef395b33b9674a042524e20d67"
+  integrity sha512-sVUpc0Vq3tXCkDGYVWGIZTRfnvu8LoTDaev7vbwh0omSvVORONr960MQWdKqJDCReIEmTj3PAr73O3aoxz7OPg==
+  dependencies:
+    "@noble/curves" "~1.4.0"
+    "@noble/hashes" "~1.4.0"
+    "@scure/base" "~1.1.6"
+
+"@scure/bip39@^1.2.1":
+  version "1.3.0"
+  resolved "https://registry.yarnpkg.com/@scure/bip39/-/bip39-1.3.0.tgz#0f258c16823ddd00739461ac31398b4e7d6a18c3"
+  integrity sha512-disdg7gHuTDZtY+ZdkmLpPCk7fxZSu3gBiEGuoC1XYxv9cGx3Z6cpTggCgW6odSOOIXCiDjuGejW+aJKCY/pIQ==
+  dependencies:
+    "@noble/hashes" "~1.4.0"
+    "@scure/base" "~1.1.6"
 
 "@sinclair/typebox@^0.24.1":
   version "0.24.51"
@@ -3700,6 +3736,23 @@
   dependencies:
     tslib "^2.3.0"
 
+"@xrplf/isomorphic@^1.0.0", "@xrplf/isomorphic@^1.0.1":
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/@xrplf/isomorphic/-/isomorphic-1.0.1.tgz#d7676e0ec0e55a39f37ddc1f3cc30eeab52e0739"
+  integrity sha512-0bIpgx8PDjYdrLFeC3csF305QQ1L7sxaWnL5y71mCvhenZzJgku9QsA+9QCXBC1eNYtxWO/xR91zrXJy2T/ixg==
+  dependencies:
+    "@noble/hashes" "^1.0.0"
+    eventemitter3 "5.0.1"
+    ws "^8.13.0"
+
+"@xrplf/secret-numbers@^1.0.0":
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/@xrplf/secret-numbers/-/secret-numbers-1.0.0.tgz#cc19ff84236cc2737b38f2e42a29924f2b8ffc0e"
+  integrity sha512-qsCLGyqe1zaq9j7PZJopK+iGTGRbk6akkg6iZXJJgxKwck0C5x5Gnwlb1HKYGOwPKyrXWpV6a2YmcpNpUFctGg==
+  dependencies:
+    "@xrplf/isomorphic" "^1.0.0"
+    ripple-keypairs "^2.0.0"
+
 "@xtuc/ieee754@^1.2.0":
   version "1.2.0"
   resolved "https://registry.yarnpkg.com/@xtuc/ieee754/-/ieee754-1.2.0.tgz#eef014a3145ae477a1cbc00cd1e552336dceb790"
@@ -4283,7 +4336,7 @@ big.js@^5.2.2:
   resolved "https://registry.yarnpkg.com/big.js/-/big.js-5.2.2.tgz#65f0af382f578bcdc742bd9c281e9cb2d7768328"
   integrity sha512-vyL2OymJxmarO8gxMr0mhChsO9QGwhynfuu4+MHTAW6czfq9humCB7rKpUjDd9YUiDPU4mzpyupFSvOClAwbmQ==
 
-bignumber.js@^9.0.1, bignumber.js@^9.1.2:
+bignumber.js@^9.0.0, bignumber.js@^9.0.1, bignumber.js@^9.1.2:
   version "9.1.2"
   resolved "https://registry.yarnpkg.com/bignumber.js/-/bignumber.js-9.1.2.tgz#b7c4242259c008903b13707983b5f4bbd31eda0c"
   integrity sha512-2/mKyZH9K85bzOEfhXDBFZTGd1CTs+5IHpeFQo9luiBG7hghdC851Pj2WAhb6E3R6b9tZj/XKhbg4fum+Kepug==
@@ -6152,15 +6205,15 @@ ethjs-util@0.1.6, ethjs-util@^0.1.6:
     is-hex-prefixed "1.0.0"
     strip-hex-prefix "1.0.0"
 
+eventemitter3@5.0.1, eventemitter3@^5.0.0, eventemitter3@^5.0.1:
+  version "5.0.1"
+  resolved "https://registry.yarnpkg.com/eventemitter3/-/eventemitter3-5.0.1.tgz#53f5ffd0a492ac800721bb42c66b841de96423c4"
+  integrity sha512-GWkBvjiSZK87ELrYOSESUYeVIc9mvLLf/nXalMOS5dYrgZq9o5OVkbZAVM06CVxYsCwH9BDZFPlQTlPA1j4ahA==
+
 eventemitter3@^4.0.0:
   version "4.0.7"
   resolved "https://registry.yarnpkg.com/eventemitter3/-/eventemitter3-4.0.7.tgz#2de9b68f6528d5644ef5c59526a1b4a07306169f"
   integrity sha512-8guHBZCwKnFhYdHr2ysuRWErTwhoN2X8XELRlrRwpmfeY2jjuUN4taQMsULKUVo1K4DvZl+0pgfyoysHxvmvEw==
-
-eventemitter3@^5.0.0:
-  version "5.0.1"
-  resolved "https://registry.yarnpkg.com/eventemitter3/-/eventemitter3-5.0.1.tgz#53f5ffd0a492ac800721bb42c66b841de96423c4"
-  integrity sha512-GWkBvjiSZK87ELrYOSESUYeVIc9mvLLf/nXalMOS5dYrgZq9o5OVkbZAVM06CVxYsCwH9BDZFPlQTlPA1j4ahA==
 
 events@^3.2.0:
   version "3.3.0"
@@ -10166,6 +10219,32 @@ ripemd160@^2.0.0, ripemd160@^2.0.1:
     hash-base "^3.0.0"
     inherits "^2.0.1"
 
+ripple-address-codec@^5.0.0:
+  version "5.0.0"
+  resolved "https://registry.yarnpkg.com/ripple-address-codec/-/ripple-address-codec-5.0.0.tgz#97059f7bba6f9ed7a52843de8aa427723fb529f6"
+  integrity sha512-de7osLRH/pt5HX2xw2TRJtbdLLWHu0RXirpQaEeCnWKY5DYHykh3ETSkofvm0aX0LJiV7kwkegJxQkmbO94gWw==
+  dependencies:
+    "@scure/base" "^1.1.3"
+    "@xrplf/isomorphic" "^1.0.0"
+
+ripple-binary-codec@^2.1.0:
+  version "2.1.0"
+  resolved "https://registry.yarnpkg.com/ripple-binary-codec/-/ripple-binary-codec-2.1.0.tgz#f1ef81f8d1f05a6cecc06fc6d9b13456569cafda"
+  integrity sha512-q0GAx+hj3UVcDbhXVjk7qeNfgUMehlElYJwiCuIBwqs/51GVTOwLr39Ht3eNsX5ow2xPRaC5mqHwcFDvLRm6cA==
+  dependencies:
+    "@xrplf/isomorphic" "^1.0.1"
+    bignumber.js "^9.0.0"
+    ripple-address-codec "^5.0.0"
+
+ripple-keypairs@^2.0.0:
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/ripple-keypairs/-/ripple-keypairs-2.0.0.tgz#4a1a8142e9a58c07e61b3cc6cfe7317db718d289"
+  integrity sha512-b5rfL2EZiffmklqZk1W+dvSy97v3V/C7936WxCCgDynaGPp7GE6R2XO7EU9O2LlM/z95rj870IylYnOQs+1Rag==
+  dependencies:
+    "@noble/curves" "^1.0.0"
+    "@xrplf/isomorphic" "^1.0.0"
+    ripple-address-codec "^5.0.0"
+
 rlp@^2.2.3, rlp@^2.2.4:
   version "2.2.7"
   resolved "https://registry.yarnpkg.com/rlp/-/rlp-2.2.7.tgz#33f31c4afac81124ac4b283e2bd4d9720b30beaf"
@@ -11950,6 +12029,21 @@ xmlchars@^2.2.0:
   version "2.2.0"
   resolved "https://registry.yarnpkg.com/xmlchars/-/xmlchars-2.2.0.tgz#060fe1bcb7f9c76fe2a17db86a9bc3ab894210cb"
   integrity sha512-JZnDKK8B0RCDw84FNdDAIpZK+JuJw+s7Lz8nksI7SIuU3UXJJslUthsi+uWBUYOwPFwW7W7PRLRfUKpxjtjFCw==
+
+xrpl@^4.0.0:
+  version "4.0.0"
+  resolved "https://registry.yarnpkg.com/xrpl/-/xrpl-4.0.0.tgz#c031b848c2a3e955b69b1dd438b1156e6826a2d6"
+  integrity sha512-VZm1lQWHQ6PheAAFGdH+ISXKvqB2hZDQ0w4ZcdAEtmqZQXtSIVQHOKPz95rEgGANbos7+XClxJ73++joPhA8Cw==
+  dependencies:
+    "@scure/bip32" "^1.3.1"
+    "@scure/bip39" "^1.2.1"
+    "@xrplf/isomorphic" "^1.0.1"
+    "@xrplf/secret-numbers" "^1.0.0"
+    bignumber.js "^9.0.0"
+    eventemitter3 "^5.0.1"
+    ripple-address-codec "^5.0.0"
+    ripple-binary-codec "^2.1.0"
+    ripple-keypairs "^2.0.0"
 
 xstream@^11.14.0:
   version "11.14.0"

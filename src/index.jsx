@@ -81,6 +81,7 @@ nb.updateDepedencies({
   '@oraichain/cw-simulate': require('@oraichain/cw-simulate'),
   '@oraichain/common-contracts-sdk': require('@oraichain/common-contracts-sdk'),
   '@cosmjs/tendermint-rpc': require('@cosmjs/tendermint-rpc'),
+  xrpl: require('xrpl'),
   './contracts': require('./contracts'),
   './mmbot': require('./mmbot')
 });
