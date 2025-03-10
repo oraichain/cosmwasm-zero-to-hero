@@ -14,6 +14,12 @@ const options = [
 
 nb.sandboxFrame.simulate = true;
 window.onload = async () => {
+  if (window.phantom) {
+    nb.sandboxFrame.window.phantom = window.phantom;
+  }
+  if (window.ethereum) {
+    nb.sandboxFrame.window.ethereum = window.ethereum;
+  }
   if (window.keplr) {
     nb.sandboxFrame.window.keplr = window.keplr;
     const OraiToken = {
@@ -27,14 +33,22 @@ window.onload = async () => {
         high: 0.007
       }
     };
-    const defaultBech32Config = (mainPrefix, validatorPrefix = 'val', consensusPrefix = 'cons', publicPrefix = 'pub', operatorPrefix = 'oper') => {
+    const defaultBech32Config = (
+      mainPrefix,
+      validatorPrefix = 'val',
+      consensusPrefix = 'cons',
+      publicPrefix = 'pub',
+      operatorPrefix = 'oper'
+    ) => {
       return {
         bech32PrefixAccAddr: mainPrefix,
         bech32PrefixAccPub: mainPrefix + publicPrefix,
         bech32PrefixValAddr: mainPrefix + validatorPrefix + operatorPrefix,
-        bech32PrefixValPub: mainPrefix + validatorPrefix + operatorPrefix + publicPrefix,
+        bech32PrefixValPub:
+          mainPrefix + validatorPrefix + operatorPrefix + publicPrefix,
         bech32PrefixConsAddr: mainPrefix + validatorPrefix + consensusPrefix,
-        bech32PrefixConsPub: mainPrefix + validatorPrefix + consensusPrefix + publicPrefix
+        bech32PrefixConsPub:
+          mainPrefix + validatorPrefix + consensusPrefix + publicPrefix
       };
     };
 
@@ -95,7 +109,9 @@ const App = () => {
   const ref = useRef();
 
   useEffect(() => {
-    const defaultOpt = options.find((opt) => opt.value === url.searchParams.get('nb')) ?? options[0];
+    const defaultOpt =
+      options.find((opt) => opt.value === url.searchParams.get('nb')) ??
+      options[0];
     changeNotebook(defaultOpt.value);
   }, []);
 
@@ -106,7 +122,8 @@ const App = () => {
   };
 
   const switchSimulate = (event) => {
-    document.getElementById('sandboxFrame').contentWindow.simulate = event.target.checked;
+    document.getElementById('sandboxFrame').contentWindow.simulate =
+      event.target.checked;
     setSimulate(event.target.checked);
   };
 
@@ -127,7 +144,11 @@ const App = () => {
     <div>
       <div className="nb-list">
         {options.map((opt, ind) => (
-          <button className={value === opt.value ? 'selected' : ''} key={opt.value} onClick={() => changeNotebook(opt.value)}>
+          <button
+            className={value === opt.value ? 'selected' : ''}
+            key={opt.value}
+            onClick={() => changeNotebook(opt.value)}
+          >
             {ind + 1}.{opt.label}
           </button>
         ))}
@@ -137,10 +158,19 @@ const App = () => {
         <label htmlFor="simulate">
           Simulate <small>(simulate === true)</small>
         </label>
-        <input id="simulate" type="checkbox" checked={simulate} onChange={switchSimulate} />
+        <input
+          id="simulate"
+          type="checkbox"
+          checked={simulate}
+          onChange={switchSimulate}
+        />
       </h2>
 
-      <a style={{ marginLeft: 20 }} target="_blank" href="https://faucet.orai.io/">
+      <a
+        style={{ marginLeft: 20 }}
+        target="_blank"
+        href="https://faucet.orai.io/"
+      >
         <strong>Testnet Faucet</strong>
       </a>
 
