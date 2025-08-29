@@ -96,6 +96,8 @@ nb.updateDepedencies({
   '@oraichain/common-contracts-sdk': require('@oraichain/common-contracts-sdk'),
   '@cosmjs/tendermint-rpc': require('@cosmjs/tendermint-rpc'),
   xrpl: require('xrpl'),
+  '@solana/errors': require('@solana/errors'),
+  '@solana/web3.js': require('@solana/web3.js'),
   './contracts': require('./contracts'),
   './mmbot': require('./mmbot')
 });
